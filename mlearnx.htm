@@ -1,0 +1,532 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Machine Learning -- Course Project</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#345A8A;}
+h2
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#4F81BD;}
+h3
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#4F81BD;}
+h4
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#4F81BD;}
+h5
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#4F81BD;
+	font-weight:normal;
+	font-style:italic;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#345A8A;
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;}
+p.Compact, li.Compact, div.Compact
+	{mso-style-name:Compact;
+	margin-top:1.8pt;
+	margin-right:0in;
+	margin-bottom:1.8pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;}
+p.Authors, li.Authors, div.Authors
+	{mso-style-name:Authors;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;}
+p.BlockQuote, li.BlockQuote, div.BlockQuote
+	{mso-style-name:"Block Quote";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+p.Definition, li.Definition, div.Definition
+	{mso-style-name:Definition;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;}
+p.TableCaption, li.TableCaption, div.TableCaption
+	{mso-style-name:"Table Caption";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	font-style:italic;}
+p.ImageCaption, li.ImageCaption, div.ImageCaption
+	{mso-style-name:"Image Caption";
+	mso-style-link:"Body Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	font-style:italic;}
+span.BodyTextChar
+	{mso-style-name:"Body Text Char";
+	mso-style-link:"Image Caption";}
+span.VerbatimChar
+	{mso-style-name:"Verbatim Char";
+	mso-style-link:"Source Code";
+	font-family:Consolas;}
+span.FootnoteRef
+	{mso-style-name:"Footnote Ref";
+	vertical-align:super;}
+span.Link
+	{mso-style-name:Link;
+	color:#4F81BD;}
+p.SourceCode, li.SourceCode, div.SourceCode
+	{mso-style-name:"Source Code";
+	mso-style-link:"Verbatim Char";
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	background:#F8F8F8;
+	word-break:break-all;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;}
+span.KeywordTok
+	{mso-style-name:KeywordTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.DataTypeTok
+	{mso-style-name:DataTypeTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;}
+span.DecValTok
+	{mso-style-name:DecValTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.BaseNTok
+	{mso-style-name:BaseNTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.FloatTok
+	{mso-style-name:FloatTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.CharTok
+	{mso-style-name:CharTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.StringTok
+	{mso-style-name:StringTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.CommentTok
+	{mso-style-name:CommentTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-style:italic;}
+span.OtherTok
+	{mso-style-name:OtherTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;}
+span.AlertTok
+	{mso-style-name:AlertTok;
+	font-family:Consolas;
+	color:#EF2929;
+	background:#F8F8F8;}
+span.FunctionTok
+	{mso-style-name:FunctionTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.RegionMarkerTok
+	{mso-style-name:RegionMarkerTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.ErrorTok
+	{mso-style-name:ErrorTok;
+	font-family:Consolas;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.NormalTok
+	{mso-style-name:NormalTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=WordSection1>
+
+<p class=MsoTitle>Machine Learning -- Course Project</p>
+
+<p class=Authors>phillip paul</p>
+
+<p class=MsoDate>Tuesday, March 17, 2015</p>
+
+<p class=MsoNormal>Machine Learning Project: Train a model to predict correct
+weight lifting activity.</p>
+
+<p class=MsoNormal>Computations done under: Win7 running Rx64 3.1.2 and using
+RStudio 0.98.109</p>
+
+<p class=MsoNormal>Original data from: Velloso, E.; Bulling, A.; Gellersen, H.;
+Ugulino, W.; Fuks, H. Qualitative Activity Recognition of Weight Lifting
+Exercises. Proceedings of 4th International Conference in Cooperation with
+SIGCHI (Augmented Human '13) . Stuttgart, Germany: ACM SIGCHI, 2013</p>
+
+<p class=MsoNormal>In the origional study, subjects executed weight curls in
+various defined fashions, correctly (class A) and variants of incorrectly
+(classes B - E). Subjects were instrumented with inertial sensors to document
+these activities. For reference, the geometry of the sensor orientation was
+reported as set to: y - vertical, z - subject line-of-sight and x -
+right-hand-rule-true to y-z.</p>
+
+<p class=MsoNormal>Here, the objective is to develop a model that takes the
+instrumentation records as input and determines correct versus incorrect and
+more generally identify particular incorrect behavior. In effect, to
+distinguish between the 5 classes.</p>
+
+<p class=MsoNormal>The origional data set is composed of some number of repeats
+of the 5 classes of exercises (weight curls) done by 6 subjects. Some portion
+was held back (reserved) for final testing. The data set contains record
+windows (each a series of measurements for a repeat-class-subject) of data from
+3-axis magnetometer, accelerometer and gyroscopic sensors as mounted on the
+subject's front-center-belt, upper arm and active wrist (termed forearm in the
+data set) and on the dumbbell. The set also contains point-by-point processed
+values for each sensor, specifically the Euler angles (roll, pitch and yaw) and
+total acceleration. These processed values are non-linear combinations of the
+basic data and may a preferred format or may be redundant in model generation.
+The data set also contains a number of summary parameters for each window. For
+purposes of the study reported here, these summary parameters are ignored.</p>
+
+<p class=MsoNormal>The &quot;cleaned&quot; set is then composed of 52
+predictors and 1 target. The predictors of the set are complete (free of NA
+entries) and have acceptable variance (pass an NZV test).</p>
+
+<p class=MsoNormal>The training set is further segmented to 70% for actual model
+training and 30% for model validation and error estimation.</p>
+
+<p class=MsoNormal>A random forest algorithm was applied to the training set
+segment. The in-sample confusion matrix was seen to be diagonal with a model
+accuracy of 100%. The model was applied to the reserved validation set. For
+out-of-sample, the accuracy is over 99.5% and the detailed result statistics
+are:</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>##
+Confusion Matrix and Statistics</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##           Reference</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Prediction    A   
+B    C    D    E</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          A 1673   
+5    0    0    0</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          B    1
+1134    5    0    0</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          C    0    0
+1019    9    2</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          D    0   
+0    2  953    2</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          E    0   
+0    0    2 1078</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Overall Statistics</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                                          
+</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##               
+Accuracy : 0.9952          </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                  95%
+CI : (0.9931, 0.9968)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     No Information
+Rate : 0.2845          </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     P-Value [Acc
+&gt; NIR] : &lt; 2.2e-16       </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                                          
+</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                  
+Kappa : 0.994           </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##  Mcnemar's Test
+P-Value : NA              </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Statistics by Class:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                     
+Class: A Class: B Class: C Class: D Class: E</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+Sensitivity            0.9994   0.9956   0.9932   0.9886   0.9963</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+Specificity            0.9988   0.9987   0.9977   0.9992   0.9996</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Pos Pred
+Value         0.9970   0.9947   0.9893   0.9958   0.9981</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Neg Pred
+Value         0.9998   0.9989   0.9986   0.9978   0.9992</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+Prevalence             0.2845   0.1935   0.1743   0.1638   0.1839</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Detection
+Rate         0.2843   0.1927   0.1732   0.1619   0.1832</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Detection
+Prevalence   0.2851   0.1937   0.1750   0.1626   0.1835</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Balanced
+Accuracy      0.9991   0.9972   0.9955   0.9939   0.9979</span></span></p>
+
+<p class=MsoNormal>A CART model (using the rpart function in R) was evaluated
+in a like fashion, returned an out-of-sample accuracy of about 77% and was
+abandoned in favor of the random forest approach.</p>
+
+<p class=MsoNormal>Highly correlated and highly anti-correlated predictors are
+essentially redundant. Of the 52 predictors: 31, 25 and 20 have
+magnitudes-of-correlation in excess of 0.5, 0.66 and 0.75, respectively. To
+reduce potential over-fitting and to improve model training speed it is
+preferable to optimize the number of predictors. Reducing the number of
+predictors generally decreases variance at the cost of possibly adding some bias.</p>
+
+<p class=MsoNormal>A reduced model was formed by excluding about 1/2 of the
+predictors (taking a correlation cut-off of 0.66). The heat-map of the
+correlation matrix for the 27 retained predictors (the map also lists the
+identities of these predictors) is shown below. In the heat map: more
+blue-colored or more red-colored indicates more correlated or anti-correlated
+pairs respectively, whereas a white color indicates un-correlated pairs.</p>
+
+<p class=MsoNormal><img width=484 height=388 id=Picture
+src="mlearnx_files/image001.png"></p>
+
+<p class=MsoNormal>A random forest algorithm was applied to the reduced
+training set (27 predictors). This new model was applied to the reserved
+validation set. For out-of-sample the new model accuracy is over 98.9% and the
+detailed result statistics are:</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>##
+Confusion Matrix and Statistics</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##           Reference</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Prediction    A   
+B    C    D    E</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          A 1673   
+8    0    0    1</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          B    1
+1124    8    0    0</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          C    0    7
+1009   18    1</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          D    0   
+0    9  941    5</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##          E    0   
+0    0    5 1075</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Overall Statistics</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                                          
+</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##               
+Accuracy : 0.9893          </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                  95%
+CI : (0.9863, 0.9918)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     No Information
+Rate : 0.2845          </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##     P-Value [Acc
+&gt; NIR] : &lt; 2.2e-16       </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                                          
+</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                  
+Kappa : 0.9865          </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##  Mcnemar's Test
+P-Value : NA              </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Statistics by Class:</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##                     
+Class: A Class: B Class: C Class: D Class: E</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+Sensitivity            0.9994   0.9868   0.9834   0.9761   0.9935</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+Specificity            0.9979   0.9981   0.9946   0.9972   0.9990</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Pos Pred
+Value         0.9946   0.9921   0.9749   0.9853   0.9954</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Neg Pred
+Value         0.9998   0.9968   0.9965   0.9953   0.9985</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>##
+Prevalence             0.2845   0.1935   0.1743   0.1638   0.1839</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Detection
+Rate         0.2843   0.1910   0.1715   0.1599   0.1827</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Detection
+Prevalence   0.2858   0.1925   0.1759   0.1623   0.1835</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## Balanced
+Accuracy      0.9986   0.9925   0.9890   0.9866   0.9962</span></span></p>
+
+<p class=MsoNormal>The sensitivity, selectivity, and accuracy of this new model
+(based on 27 select predictors) compares favorably with the full model (based
+on 52 predictors). The new model is the result of this study and was applied to
+successfully predict all elements of the formal (reserved) test set.</p>
+
+<p class=MsoNormal>In summary: A random forest model using 27 predictors (as
+selected out of 52 by eliminating elements with over 66% correlation) provided
+an out-of-sample sensitivity and selectivity in excess of 97.5% for all 5
+classes, and correctly predicted 100% of the final test cases. It is possible
+that a further reduction in the number of predictors is possible. The random
+forest approach was found to be superior to a CART model approach.</p>
+
+<p class=MsoNormal>The reduced set of 27 predictors are: 5 from the belt sensor
+as x-y-z gyro and x-z magnet.; 5 from the dumbbell sensor as 3 Euler angles, z
+gyro and z magnet.; 8 from the arm sensor as 3 Euler angles, total
+acceleration, y-z gyro and y-z magnet.; 9 from the wrist sensor as 3 Euler
+angles, total acceleration, x gyro, z acceleration and x-y-z magnet. Of these,
+the 9 Euler angles, arm gyro-z, wrist acceleration-z and the 8 magnetometer
+measures are found to be the more important predictors. It appears that relative
+position and direction sensor data (magnetometer and gyro components) are more
+useful than acceleration. The relative importance of the magnetometer signal
+raises a concern, specifically the use of magnetometer sensors without stated
+(in the study report) controls for disruptive magnetic entities (e.g. the
+dumbbell used in the study).</p>
+
+<p class=MsoNormal>The eventual target for the type of model presented here is
+likely a deployable (e.g. man-portable) training device. In this regard: 1) The
+magnetometer signals were found to be important. However, use of a magnetometer
+may be precluded by interference. 2) It will be preferable to use down-sampled
+measures to optimize available computing power. Down-sampled (summary windowed)
+parameters were provided in the original data set. However these summary values
+could not be properly and meaningfully related back to the respective data
+traces. For pure interest and in a separate effort, a set of down-sampled
+predictors were computed from the data traces. A random forest model was trained
+to these new summary predictors. This 'summary' model had a predictive power
+that compared favorably to the results reported here.</p>
+
+</div>
+
+</body>
+
+</html>
